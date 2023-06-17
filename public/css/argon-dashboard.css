@@ -3661,7 +3661,7 @@ fieldset:disabled .btn {
 
 .btn-primary {
   --bs-btn-color: #000;
-  --bs-btn-bg: #5e72e4;
+  --bs-btn-bg: #65DA98;
   --bs-btn-border-color: #5e72e4;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #7687e8;
@@ -3678,7 +3678,7 @@ fieldset:disabled .btn {
 
 .btn-secondary {
   --bs-btn-color: #000;
-  --bs-btn-bg: #8392ab;
+  --bs-btn-bg: #DB4437;
   --bs-btn-border-color: #8392ab;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #96a2b8;
@@ -10580,11 +10580,11 @@ fieldset:disabled .btn {
 }
 
 .bg-primary {
-  background-color: #324cdd !important;
+  background-color: #8F0B00 !important;
 }
 
 .bg-secondary {
-  background-color: #8392ab !important;
+  background-color: #FF9F96 !important;
 }
 
 .bg-success {
@@ -23251,6 +23251,8 @@ hr.horizontal.gray-light {
 
 .sidenav {
   z-index: 999;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .sidenav .navbar-brand,

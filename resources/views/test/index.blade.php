@@ -1,35 +1,19 @@
 @extends('layout.main')
-@section('judul_halaman', 'Halaman Dashboard')
 
 @section('content')
 
-Oktaviani Sus8:15 PM
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</
-ecj-ijio-ukc
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 text-white text-center">
+            <h4>LATEST MOVIES</h4>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    <div class="row col-lg-12" id="movie">
+        
+    </div>
+</div>
 @endsection
 

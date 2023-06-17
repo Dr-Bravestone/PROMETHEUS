@@ -1,0 +1,130 @@
+.movie-box {
+  -webkit-text-fill-color: white;
+  height: 200px;
+  width: 200px;
+  font-family: 'Segoe UI';
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 5px;
+  z-index: 10;
+  font-size: 100%;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.3s ease-in-out;
+  position: relative; /* Added position relative */
+}
+
+.bg-gradient-ardhan{
+  background: linear-gradient(#ffffff, #c93528);
+}
+
+
+  .movie-box img{
+    z-index: 11;
+    max-width: 100px;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    align-self: flex-start;
+  }
+  .movie-box .text-center {
+    flex-grow: 1; /* Added flex-grow property */
+    display: flex; /* Added display property */
+    flex-direction: column; /* Added flex-direction property */
+    justify-content: center; /* Added justify-content property */
+    align-items: center; /* Added align-items property */
+  }
+
+  .movie-box p{
+    text-align: justify;
+    font-size: 70%;
+    z-index: 11;
+  }
+
+  .movie-box h4{
+    text-align: center;
+    z-index: 11;
+  }
+  
+
+  .movie-box:hover {
+    transform:scale(1.05);
+    z-index: 1;
+    color: rgb(255, 255, 255);
+  }
+
+
+
+.movie-box:hover::after{
+  content: '';
+  position: absolute;
+  inset: 9px;
+  z-index: 2;
+  opacity: 1;
+  border-radius: 5px;
+}
+
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+
+
+
+
+
+
+  .tv-box {
+    background-color: #d1ff2c;
+    height: 870px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content:flex-start;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.3s ease-in-out;
+    /* position: relative;
+    overflow: hidden; */
+  }
+  .tv-box img{
+    border-radius: 8px;
+  }
+
+  .tv-box:hover {
+    background-color: hsl(75, 100%, 74%);
+    transform: scale(1.01);
+  }
+
+  @media screen and (max-width: 767px) {
+    .movie-box {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  /* Reduce the font size of the text inside the .movie-box element for mobile screens */
+  @media screen and (max-width: 575px) {
+    .movie-box h4 {
+      font-size: 1.2rem;
+    }
+    .movie-box p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .bgc{
+    background: #47c2ff;
+  }
+
+
+
+
+  /* ============================= */
+
+  
