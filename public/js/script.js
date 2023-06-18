@@ -78,6 +78,7 @@ let listmovie = document.getElementById("movie")
 let upcomingMovie = document.getElementById("upMovie")
 let tv = document.getElementById("tv")
 let overview = document.getElementById("overview")
+let weather = document.getElementById("cuaca")
 
 
 //ambil data movie populer
@@ -99,6 +100,17 @@ fetch("https://api.themoviedb.org/3/movie/upcoming?api_key=a8215bb5dba688be3fa1f
     console.log(data.results);
     console.log(data.total_pages);
 })
+
+// ambil daata cuaca palembang
+fetch("https://api.openweathermap.org/data/2.5/weather?q=palembang&appid=1b384c4157a711acc9cfd8948d5c1a36")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    const weatherData = data.weather[0]; // Accessing the first element of data.weather array
+    showWeather(weatherData); // Calling the function with the specific data
+    console.log(weatherData);
+  })
+
 //fungtion movie
 function showMovie(val, idx) {
     listmovie.innerHTML += `
@@ -132,6 +144,35 @@ function showUpcoming(val, idx){
             </div>
         </div>`
 }
+
+function showWeather(val, idx){
+  
+  // list.innerHTML += `<li>${val.email}</li>`
+  weather.innerHTML += `
+      <div class='col-lg-12 col-sm-6 px-4 text-center'>
+          <div class='h-70 rounded-2 text-dark'>
+              <h4 class='text-white'>${val.main}</h4>
+              <img src="https://openweathermap.org/img/w/${val.icon}.png" alt="icon"><br>
+              <h6 class='text-white'>${val.description}</h2>
+          </div>
+      </div>`
+}
 {/* <p>https://api.themoviedb.org${val.poster_path}</p> */}
 
 
+
+// Get the current page name
+function getCurrentPage() {
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+  return page;
+}
+
+// Update the h6 element with the current page
+function updatePageTitle() {
+  var pageTitle = getCurrentPage();
+  document.getElementById("page-title").textContent = pageTitle;
+}
+
+// Call the updatePageTitle function when the document is loaded
+document.addEventListener("DOMContentLoaded", updatePageTitle);

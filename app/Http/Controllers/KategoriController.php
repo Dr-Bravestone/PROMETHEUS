@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\mahasiswa;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
-class MahasiswaController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $mahasiswa = mahasiswa::all();
+        $kategori = Kategori::all();
         // dd($fakultas);
-        return view('mahasiswa.index')->with('mahasiswa', $mahasiswa);
+        return view('Kategori.index')->with('kategori', $kategori);
         //
     }
 
@@ -37,7 +37,7 @@ class MahasiswaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(mahasiswa $mahasiswa)
+    public function show(Kategori $kategori)
     {
         //
     }
@@ -45,7 +45,7 @@ class MahasiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(mahasiswa $mahasiswa)
+    public function edit(Kategori $kategori)
     {
         //
     }
@@ -53,7 +53,7 @@ class MahasiswaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, mahasiswa $mahasiswa)
+    public function update(Request $request, Kategori $kategori)
     {
         //
     }
@@ -61,7 +61,7 @@ class MahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(mahasiswa $mahasiswa)
+    public function destroy(Kategori $kategori)
     {
         //
     }

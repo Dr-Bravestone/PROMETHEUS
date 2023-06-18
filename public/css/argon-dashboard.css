@@ -23505,7 +23505,7 @@ hr.horizontal.gray-light {
 }
 
 .g-sidenav-show:not(.g-sidenav-hidden) .navbar-vertical .nav-item .nav-link span.sidenav-mini-icon {
-  opacity: 0;
+  opacity: 1;
 }
 
 .g-sidenav-hidden .sidenav-footer {

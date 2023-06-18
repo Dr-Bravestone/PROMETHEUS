@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Prometheus;
+use App\Models\WatchList;
 use Illuminate\Http\Request;
 
-class PrometheusController extends Controller
+class WatchListController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $prometheus = prometheus::all();
-        // dd($fakultas);
-        return view('test.index')->with('test', $prometheus);
         //
     }
 
@@ -37,7 +34,7 @@ class PrometheusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Prometheus $prometheus)
+    public function show(WatchList $watchList)
     {
         //
     }
@@ -45,7 +42,7 @@ class PrometheusController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Prometheus $prometheus)
+    public function edit(WatchList $watchList)
     {
         //
     }
@@ -53,7 +50,7 @@ class PrometheusController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Prometheus $prometheus)
+    public function update(Request $request, WatchList $watchList)
     {
         //
     }
@@ -61,7 +58,7 @@ class PrometheusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Prometheus $prometheus)
+    public function destroy(WatchList $watchList)
     {
         //
     }

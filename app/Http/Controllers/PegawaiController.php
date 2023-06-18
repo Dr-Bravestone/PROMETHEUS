@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\table;
+use App\Models\Pegawai;
 use Illuminate\Http\Request;
 
-class TableController extends Controller
+class PegawaiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $table = table::all();
+        $pegawai = Pegawai::all();
         // dd($fakultas);
-        return view('table.index')->with('table', $table);
+        return view('Pegawai.index')->with('pegawai', $pegawai);
         //
     }
 
@@ -37,7 +37,7 @@ class TableController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(table $table)
+    public function show(Pegawai $pegawai)
     {
         //
     }
@@ -45,7 +45,7 @@ class TableController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(table $table)
+    public function edit(Pegawai $pegawai)
     {
         //
     }
@@ -53,7 +53,7 @@ class TableController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, table $table)
+    public function update(Request $request, Pegawai $pegawai)
     {
         //
     }
@@ -61,7 +61,7 @@ class TableController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(table $table)
+    public function destroy(Pegawai $pegawai)
     {
         //
     }
