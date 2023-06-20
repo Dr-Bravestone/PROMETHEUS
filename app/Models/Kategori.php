@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Kategori extends Model
 {
     use HasFactory, HasUuids;
+    protected $table='kategoris';
 }
+

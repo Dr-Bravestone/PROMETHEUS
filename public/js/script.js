@@ -176,3 +176,22 @@ function updatePageTitle() {
 
 // Call the updatePageTitle function when the document is loaded
 document.addEventListener("DOMContentLoaded", updatePageTitle);
+
+
+fetch("https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-SumateraSelatan.xml")
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(data, "text/xml");
+
+    // Process the XML data and extract the desired information
+    const weatherData = xmlDoc.getElementsByTagName("weather")[0];
+    // ... do further processing or access specific XML elements as needed
+
+    // Display the weather data inside the container element
+    const container = document.querySelector(".container-fluid");
+    container.innerHTML = weatherData.textContent;
+  })
+  .catch(error => {
+    console.log("Error:", error);
+  });

@@ -14,7 +14,7 @@ class KategoriController extends Controller
     {
         $kategori = Kategori::all();
         // dd($fakultas);
-        return view('Kategori.index')->with('kategori', $kategori);
+        return view('kategori.index')->with('kategori', $kategori);
         //
     }
 
@@ -23,6 +23,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
+        return view('kategori.create');
         //
     }
 
@@ -31,6 +32,13 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
+        $validasi=$request->validate(['nama_kategori'=>'required', 'deskripsi'=>'required']);
+        $kategori= new Kategori();
+        $kategori->nama_kategori=$validasi['nama_kategori'];
+        $kategori->deskripsi=$validasi['deskripsi'];
+
+        $kategori->save();
+        return redirect()->route('kategori.index')->with('success','Data Kategori Telah Disimpan.');
         //
     }
 
@@ -47,7 +55,9 @@ class KategoriController extends Controller
      */
     public function edit(Kategori $kategori)
     {
-        //
+        $kategori=Kategori::orderBy('nama_kategori','ASC')->get();
+        return view('kategori.edit')
+        ->with('kategori', $kategori);
     }
 
     /**
@@ -55,6 +65,17 @@ class KategoriController extends Controller
      */
     public function update(Request $request, Kategori $kategori)
     {
+        $validasi=$request->validate([
+            'nama_kategori'=>'required',
+            'deskripsi'=>'required',
+
+
+        ]);
+
+        Kategori::where('id', $kategori->id)->update($validasi);
+        return redirect()
+            ->route('kategori.index')
+            ->with('succcess', 'Data Kategori'. $validasi['nama_kategori'].'berhasil disimpan');
         //
     }
 
@@ -63,6 +84,8 @@ class KategoriController extends Controller
      */
     public function destroy(Kategori $kategori)
     {
+        $kategori->delete();
+        return back();
         //
     }
 }

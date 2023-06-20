@@ -35,25 +35,25 @@
     
   </div> --}}
   <div class="row mt-4">
-    <form class="card" action="{{route('kategori.store')}}" method="POST">
+    <form class="card" action="{{route('kategori.edit', $kategori->id)}}" method="POST">
       @csrf
       <div class="form-group">
           <label for="example-text-input" class="form-control-label">Nama Kategori</label>
-          <input class="form-control" type="text" name="nama_kategori" placeholder="Nama Kategori" value="{{old('nama_kategori')}}">
+          <input class="form-control" type="text" name="nama_kategori" placeholder="Nama Kategori" value="{{$kategori->nama_kategori}}">
           @error('nama_kategori')
                 <span class="text-danger">{{message}}</span>
           @enderror
         </div>
       <div class="form-group">
         <label for="example-text-input" class="form-control-label">Deskripsi</label>
-        <input class="form-control" type="text" name="deskripsi" placeholder="deskripsi Kategoro" value="{{old('deskripsi')}}">
+        <input class="form-control" type="text" name="deskripsi" placeholder="deskripsi Kategoro" value="{{$kategori->deskripsi}}">
         @error('deskripsi')
                 <span class="text-danger">{{message}}</span>
         @enderror
       </div>
       
       <div class="text-center">
-        <button type="submit" class="btn bg-gradient-dark w-25 my-4 mb-2">Tambahkan</button>
+        <button type="submit" class="btn bg-gradient-dark w-25 my-4 mb-2">Update</button>
         <button type="button" class="btn btn-danger w-14 my-4 mb-2 text-light">Batal</button>
       </div>
   </form>

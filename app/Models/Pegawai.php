@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class Pegawai extends Model
 {
     use HasFactory, HasUuids;
+    protected $table='kategoris';
+    public function kategori()
+    {
+        return $this->belongsTo(kategori::class,'kategori_id');
+    }
 }

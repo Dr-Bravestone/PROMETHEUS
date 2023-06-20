@@ -19,24 +19,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
-  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{url('img/apple-icon.png')}}">
+  <link rel="icon" type="image/png" href="{{url('img/favicon.png')}}">
   <title>
     PROJECT PROMETHEUS
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="css/nucleo-icons.css" rel="stylesheet" />
-  <link href="css/nucleo-svg.css" rel="stylesheet" />
+  <link href="{{url('css/nucleo-icons.css')}}" rel="stylesheet" />
+  <link href="{{url('css/nucleo-svg.css')}}" rel="stylesheet" />
   <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="css/nucleo-svg.css" rel="stylesheet" />
+  <script src="{{url('https://kit.fontawesome.com/42d5adcbca.js')}}" crossorigin="anonymous"></script>
+  <link href="{{url('css/nucleo-svg.css')}}" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <link id="pagestyle" href="{{url('css/argon-dashboard.css?v=2.0.4')}}" rel="stylesheet" />
 
   {{-- style.css --}}
-  <link href="css/style.css" rel="stylesheet"/>
+  <link href="{{url('css/style.css')}}" rel="stylesheet"/>
 </head>
 
 <body class="g-sidenav-show bg-secondary">
@@ -46,7 +46,7 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
-        <img src="img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+        <img src="{{url('img/logo-ct-dark.png')}}" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-3 font-weight-bold">PROMETHEUS</span>
       </a>
     </div>
@@ -57,9 +57,9 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Halaman Utama</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('Kategori') ? 'active' : '' }}" href="{{ route('Kategori.index') }}">
+          <a class="nav-link {{ Request::is('kategori') ? 'active' : '' }}" href="{{ route('kategori.index') }}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-bullet-list-67 text-warning text-sm opacity-10"></i>
+              <i class="ni ni-bullet-list-67 text-danger text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1">Kategori</span>
           </a>
@@ -70,6 +70,14 @@
               <i class="ni ni-single-02 text-warning text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1">Pegawai</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('Laporan') ? 'active' : '' }}" href="{{ route('Laporan.index') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-single-copy-04 text-primary text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Laporan</span>
           </a>
         </li>
         <li class="nav-item">
@@ -156,7 +164,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                        <img src="{{url('img/team-2.jpg')}}" class="avatar avatar-sm  me-3 ">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -174,7 +182,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                        <img src="{{url('img/small-logos/logo-spotify.svg')}}" class="avatar avatar-sm bg-gradient-dark  me-3 ">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -228,7 +236,7 @@
     <div class="container-fluid ">
       <div class="row mt-1">
         <div class="col-lg-6 mb-lg-0 mb-4" style="height: 200px">
-          <div class="col-lg-6 card z-index-1 h-100 text-center border border-3 border-light" id="cuaca" style="background-image: url('img/weather4.jpg'); background-size: cover; background-position: center;">
+          <div class="col-lg-6 card z-index-1 h-100 text-center border border-5 border-light" id="cuaca" style="background-image: url({{url('img/weather4.jpg')}}); background-size: cover; background-position: center;">
             <h4 style="font-family: 'Segoe UI'; color: azure ;" class="text-light">Palembang Today</h4>
           {{-- style="background-image: url('img/bgAnime3.jpg');
           background-size: cover;" --}}
@@ -240,36 +248,30 @@
           </div>
         </div>
         <div class="col-lg-6 ">
-          <div class="card card-carousel overflow-hidden h-100 p-0">
+          <div class="card card-carousel overflow-hidden h-100 p-0 border border-5 border-light">
             <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
               <div class="carousel-inner border-radius-lg h-100">
-                <div class="carousel-item h-100" style="background-image: url('img/bgAnime2.jpg');
+                <div class="carousel-item h-100" style="background-image: url('{{url('img/bgAnime2.jpg')}}');
                   background-size: cover;">
                   <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                      <i class="ni ni-camera-compact text-dark opacity-10"></i>
-                    </div>
-                    <h5 class="text-white mb-1">Get started with Argon</h5>
+                    
+                    <h5 class="text-dark mb-1">Get started with Argon</h5>
                     <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
                   </div>
                 </div>
-                <div class="carousel-item h-100 active" style="background-image: url('img/bgAnime4.jpg');
+                <div class="carousel-item h-100 active" style="background-image: url('{{url('img/bgAnime4.jpg')}}');
                   background-size: cover;">
                   <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                      <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-                    </div>
+                    
                     <h5 class="text-white mb-1">Faster way to create web pages</h5>
                     <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
                   </div>
                 </div>
-                <div class="carousel-item h-100" style="background-image: url('img/bgAnime5.jpg');
+                <div class="carousel-item h-100" style="background-image: url('{{url('img/bgAnime5.jpg')}}');
                 background-size: cover;">
                   <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                      <i class="ni ni-trophy text-dark opacity-10"></i>
-                    </div>
-                    <h5 class="text-white mb-1">Share with us your design tips!</h5>
+                    
+                    <h5 class="text-dark mb-1" style="stroke: white stroke-witdh: 3px">Share with us your design tips!</h5>
                     <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
                   </div>
                 </div>
@@ -287,22 +289,14 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid py-4">
-      <div class="row mt-4">
-        <div class="col-lg-3" id="cuaca">
-      
-        </div>
-    </div>
     {{-- END NAVBAR --}}
     <!-- End Navbar -->
     <div class="container-fluid py-4 bg-secondary">
       
       
-      <div class="row mt-4">
-        <div class="col-lg-12 mb-lg-0 mb-4">
-          <div class="card ">
+      <div class="row card bg-dark">
+        <div class="col-lg-12 my-4">
                 @yield('content')
-          </div>
         </div>
        
       </div>
@@ -418,11 +412,11 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="js/core/popper.min.js"></script>
-  <script src="js/core/bootstrap.min.js"></script>
-  <script src="js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="js/plugins/chartjs.min.js"></script>
+  <script src="{{url('js/core/popper.min.js')}}"></script>
+  <script src="{{url('js/core/bootstrap.min.js')}}"></script>
+  <script src="{{url('js/plugins/perfect-scrollbar.min.js')}}"></script>
+  <script src="{{url('js/plugins/smooth-scrollbar.min.js')}}"></script>
+  <script src="{{url('js/plugins/chartjs.min.js')}}"></script>
   <script>
     var ctx1 = document.getElementById("chart-line");
 
@@ -516,10 +510,10 @@
     }
   </script>
   <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script async defer src="{{url('https://buttons.github.io/buttons.js')}}"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="js/argon-dashboard.min.js?v=2.0.4"></script>
-  <script src="js/script.js"></script>
+  <script src="{{url('js/argon-dashboard.min.js?v=2.0.4')}}"></script>
+  <script src="{{url('js/script.js')}}"></script>
 </body>
 
 </html>

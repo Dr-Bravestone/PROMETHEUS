@@ -73,6 +73,22 @@
     }
   }
 
+  .tooltip {
+    position: absolute;
+    background-color: #000;
+    color: #49a4ff;
+    padding: 5px;
+    visibility: hidden;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    white-space: normal; /* Allows full text to wrap within the tooltip */
+    width: 200px; /* Adjust width as needed */
+  }
+
+  td:hover .tooltip {
+    visibility: visible;
+  }
 
   
 

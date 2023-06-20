@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\Pegawai;
 use Illuminate\Http\Request;
 
@@ -23,6 +24,10 @@ class PegawaiController extends Controller
      */
     public function create()
     {
+        $kategori = Kategori::all();
+        return view('pegawai.create')->with('kategori', $kategori);
+        
+        //
         //
     }
 
@@ -31,6 +36,14 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
+        $validasi=$request->validate(['nama_'=>'required | unique:prodis', 'kategoris_id'=>'required']);
+
+        $prodi= new Pegawai();
+        $prodi->nama_prodi=$validasi['nama_prodi'];
+        $prodi->kategori_id=$validasi['kategori_id'];
+
+        $prodi->save();
+        return redirect()->route('pegawai.index')->with('success','Data pegawai Telah Disimpan.');
         //
     }
 

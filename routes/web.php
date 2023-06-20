@@ -4,6 +4,7 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,8 @@ route::resource('Register', RegisterController::class);
 
 route::resource('user', userController::class);
 
-route::resource('Kategori', KategoriController::class);
+route::resource('kategori', KategoriController::class);
 
 route::resource('pegawai', PegawaiController::class);
+
+route::resource('Laporan', LaporanController::class);

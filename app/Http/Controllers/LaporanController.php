@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\WatchList;
+use App\Models\Laporan;
 use Illuminate\Http\Request;
 
-class WatchListController extends Controller
+class LaporanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $laporan = Laporan::all();
+        // dd($fakultas);
+        return view('Laporan.index')->with('Laporan', $laporan);
         //
     }
 
@@ -34,7 +37,7 @@ class WatchListController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(WatchList $watchList)
+    public function show(Laporan $laporan)
     {
         //
     }
@@ -42,7 +45,7 @@ class WatchListController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(WatchList $watchList)
+    public function edit(Laporan $laporan)
     {
         //
     }
@@ -50,7 +53,7 @@ class WatchListController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, WatchList $watchList)
+    public function update(Request $request, Laporan $laporan)
     {
         //
     }
@@ -58,7 +61,7 @@ class WatchListController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(WatchList $watchList)
+    public function destroy(Laporan $laporan)
     {
         //
     }

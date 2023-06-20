@@ -7,6 +7,14 @@
           <div class="card-header pb-0">
             <h6>Authors table</h6>
           </div>
+          <div class="col-lg-12 p-2">
+            <div class="text-end">
+                <a href="{{route('pegawai.create')}}" class="btn btn-icon btn-primary" type="button">
+                    <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                    <span class="btn-inner--text">Tambah</span>
+                  </a>
+            </div>
+          </div>
           <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
               <table class="table align-items-center mb-0">
@@ -229,7 +237,7 @@
                       <p class="text-sm font-weight-bold mb-0">$2,500</p>
                     </td>
                     <td>
-                      <span class="text-xs font-weight-bold">working</span>
+                      <span class="text-xs font-weight-bold">working hgfftttttwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</span>
                     </td>
                     <td class="align-middle text-center">
                       <div class="d-flex align-items-center justify-content-center">

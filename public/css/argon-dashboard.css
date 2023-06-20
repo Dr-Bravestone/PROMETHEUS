@@ -344,6 +344,10 @@ svg {
 table {
   caption-side: bottom;
   border-collapse: collapse;
+  word-break:break-word;
+  
+  table-layout: fixed;
+  width: 100%;
 }
 
 caption {
@@ -24593,6 +24597,10 @@ hr.horizontal.gray-light {
 .table td,
 .table th {
   white-space: nowrap;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  position: relative;
 }
 
 .table.align-items-center td,
@@ -26857,6 +26865,9 @@ pre[class*="language-"] {
 
 .ps--active-x>.ps__rail-x,
 .ps--active-y>.ps__rail-y {
+  
+  display: block;
+  background-color: transparent;
   
 }
 
